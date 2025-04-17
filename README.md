@@ -1,15 +1,20 @@
-📦 QuadTriviaBE – Backend
-✅ Vereisten
+📦 **QuadTriviaBE – Backend**
+
+✅ **Vereisten:**
+
 Java 17+
 
 Maven
 
-Internetverbinding (de app gebruikt Open Trivia DB)
+Internetverbinding (de app gebruikt Open Trivia DB).
 
-🚀 Starten
+**🚀 Starten**
+
 Clone de repo:
 git clone https://github.com/sjarske/QuadTriviaBE.git
+
 cd QuadTriviaBE
+
 
 Start de applicatie met Maven:
 ./mvnw spring-boot:run
@@ -17,7 +22,8 @@ Start de applicatie met Maven:
 De API draait op:
 http://localhost:8080
 
-🔗 Endpoints
+🔗 **Endpoints**
+
 GET /api/questions – Haalt 5 trivia vragen op
 
 POST /api/checkanswers – Controleert de antwoorden van de gebruiker

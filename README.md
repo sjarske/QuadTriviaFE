@@ -1,31 +1,31 @@
-📦 **QuadTriviaBE – Backend**
+**🧠 QuadTriviaFE – Frontend**
 
-✅ **Vereisten:**
+**✅ Vereisten** 
 
-Java 17+
+Node.js (versie 18+ aanbevolen)
 
-Maven
-
-Internetverbinding (de app gebruikt Open Trivia DB).
+npm
 
 **🚀 Starten**
 
 Clone de repo:
-git clone https://github.com/sjarske/QuadTriviaBE.git
 
-cd QuadTriviaBE
+git clone https://github.com/sjarske/QuadTriviaFE.git
 
+cd QuadTriviaFE
 
-Start de applicatie met Maven:
-./mvnw spring-boot:run
+*Installeer dependencies:
 
-De API draait op:
-http://localhost:8080
+npm install
 
-🔗 **Endpoints**
+*Start de app:
 
-GET /api/questions – Haalt 5 trivia vragen op
+npm run dev
 
-POST /api/checkanswers – Controleert de antwoorden van de gebruiker
+Open de browser op:
 
-POST /api/newquiz – Leegt de cache en haalt nieuwe vragen op
+http://localhost:5173
+
+**🔁 Opmerking**
+
+De frontend verwacht dat de backend draait op http://localhost:8080. Zorg dus dat je backend eerst gestart is.

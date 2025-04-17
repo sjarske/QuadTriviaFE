@@ -20,11 +20,11 @@ npm install
 
 *Start de app:
 
-npm run dev
+npm start
 
 Open de browser op:
 
-http://localhost:5173
+http://localhost:3000
 
 **🔁 Opmerking**
 

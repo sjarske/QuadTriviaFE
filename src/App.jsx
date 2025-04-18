@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useCallback } from "react";
 import { fetchQuestions, checkAnswers } from "./api";
 import QuestionList from "./components/QuestionList";
 import ResultList from "./components/ResultList";
@@ -14,21 +14,18 @@ function App() {
   const [error, setError] = useState(null);
   const [cooldown, setCooldown] = useState(0);
 
-  const loadNewQuestions = () => {
-    if (cooldown > 0) return;
-
+  const loadNewQuestions = useCallback(() => {
     setLoading(true);
     setResults(null);
     setAnswers({});
-    setError(null);
-
+  
     fetch("http://localhost:8080/api/newquiz", { method: "POST" })
       .then(() => {
         fetchQuestions()
           .then(data => {
+            console.log("Vragen ontvangen:", data);
             setQuestions(data);
             setLoading(false);
-            setCooldown(5);
           })
           .catch(err => {
             console.error(err);
@@ -38,14 +35,15 @@ function App() {
       })
       .catch(err => {
         console.error("Fout bij het resetten van de cache:", err);
-        setError("Fout bij het resetten van de quiz.");
         setLoading(false);
       });
-  };
+  }, []);
+  
 
   useEffect(() => {
     loadNewQuestions();
-  }, []);
+  }, [loadNewQuestions]);
+  
 
   useEffect(() => {
     if (cooldown === 0) return;

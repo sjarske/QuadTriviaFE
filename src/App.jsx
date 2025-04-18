@@ -1,4 +1,4 @@
-import { useEffect, useState,useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { fetchQuestions, checkAnswers } from "./api";
 import QuestionList from "./components/QuestionList";
 import ResultList from "./components/ResultList";
@@ -18,8 +18,8 @@ function App() {
     setLoading(true);
     setResults(null);
     setAnswers({});
-  
-    fetch("http://localhost:8080/api/newquiz", { method: "POST" })
+
+    fetch("https://quadtriviabe.onrender.com/api/newquiz", { method: "POST" })
       .then(() => {
         fetchQuestions()
           .then(data => {
@@ -38,12 +38,12 @@ function App() {
         setLoading(false);
       });
   }, []);
-  
+
 
   useEffect(() => {
     loadNewQuestions();
   }, [loadNewQuestions]);
-  
+
 
   useEffect(() => {
     if (cooldown === 0) return;

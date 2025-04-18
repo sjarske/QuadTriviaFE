@@ -1,38 +1,74 @@
-.App {
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+  color: #333;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  color: #3f51b5;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.question-card {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f0f4ff;
+  border-radius: 10px;
+  border-left: 5px solid #3f51b5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.question-text {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.answers label {
+  display: block;
+  margin: 0.3rem 0;
+  cursor: pointer;
+}
+
+button {
+  background: #3f51b5;
   color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-right: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover:enabled {
+  background: #2c3d99;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.warning {
+  color: #ff9800;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.result-card {
+  background: #e8f5e9;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 5px solid #4caf50;
 }

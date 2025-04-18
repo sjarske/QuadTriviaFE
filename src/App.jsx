@@ -3,6 +3,9 @@ import { fetchQuestions, checkAnswers } from "./api";
 import QuestionList from "./components/QuestionList";
 import ResultList from "./components/ResultList";
 
+import "./App.css";
+
+
 function App() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
@@ -70,7 +73,7 @@ function App() {
   if (error) return <div style={{ padding: "2rem", color: "red" }}>{error}</div>;
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="app-container">
       <h1>Trivia Quiz</h1>
       {results ? (
         <>

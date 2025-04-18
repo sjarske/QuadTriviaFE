@@ -74,7 +74,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Trivia Quiz</h1>
+      <h1>Qaud Trivia Quiz</h1>
       {results ? (
         <>
           <ResultList questions={questions} results={results} />

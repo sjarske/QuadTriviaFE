@@ -5,7 +5,6 @@ import ResultList from "./components/ResultList";
 
 import "./App.css";
 
-
 function App() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
@@ -18,6 +17,7 @@ function App() {
     setLoading(true);
     setResults(null);
     setAnswers({});
+    setCooldown(5);
 
     fetch("https://quadtriviabe.onrender.com/api/newquiz", { method: "POST" })
       .then(() => {
@@ -39,17 +39,17 @@ function App() {
       });
   }, []);
 
-
   useEffect(() => {
     loadNewQuestions();
   }, [loadNewQuestions]);
 
-
   useEffect(() => {
     if (cooldown === 0) return;
+
     const timer = setInterval(() => {
       setCooldown(prev => (prev > 0 ? prev - 1 : 0));
     }, 1000);
+
     return () => clearInterval(timer);
   }, [cooldown]);
 
@@ -72,7 +72,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Qaud Trivia Quiz</h1>
+      <h1>Quad Trivia Quiz</h1>
       {results ? (
         <>
           <ResultList questions={questions} results={results} />
@@ -103,7 +103,6 @@ function App() {
             {cooldown > 0 ? `Wachten... ${cooldown}s` : "Nieuwe Quiz"}
           </button>
         </>
-
       )}
     </div>
   );
